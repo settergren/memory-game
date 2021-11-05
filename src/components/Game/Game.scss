@@ -1,0 +1,20 @@
+.game-container {
+  margin: 2em;
+
+  .tile-container {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .tile {
+      background-color: gray;
+      width: 100px;
+      height: 100px;
+      margin: 0.5em;
+
+      &.show-target {
+        background-color: blue;
+      }
+    }
+  }
+}
