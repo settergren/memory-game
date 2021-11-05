@@ -1,19 +1,63 @@
 .game-container {
   margin: 2em;
 
-  .tile-container {
+  .game-bar {
+    input, button {
+      margin: 0 0.5em;
+    }
+    
+    margin-bottom: 1em;
+  }
+
+  &.game-active {
+    .tile {
+      background-color: #aaa;
+    }
+  }
+
+  &.show-targets {
+    .tiles {
+      .tile {
+        cursor: none !important;
+      }
+    }
+  }
+
+  .tiles {
 
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
 
-    .tile {
-      background-color: gray;
-      width: 100px;
-      height: 100px;
-      margin: 0.5em;
+    .tile-container {
 
-      &.show-target {
-        background-color: blue;
+      display: flex;
+
+      .tile {
+        flex: 1 1 100%;
+        margin: 2%;
+        transition: background-color 300ms;
+        background-color: #ccc;
+        border-radius: 5%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #aaa;
+        }
+  
+        &.revealed {
+          background-color: dodgerblue;
+        }
+  
+        &.hit {
+          background-color: teal;
+        }
+  
+        &.miss {
+          background-color: crimson;
+        }
       }
     }
   }
